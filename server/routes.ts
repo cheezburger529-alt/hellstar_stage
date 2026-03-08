@@ -6,7 +6,7 @@ import { randomUUID } from "crypto";
 import { api, ws } from "@shared/routes";
 
 export async function registerRoutes(httpServer: Server, app: Express): Promise<Server> {
-W  const HOST_USERNAME = "@Host_Account_9148";
+  const HOST_USERNAME = "@Host_Account_9148";
 
   function generateHostPassword(): string {
     return randomUUID().replace(/-/g, "").slice(0, 12);
