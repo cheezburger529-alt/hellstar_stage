@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Manrope', sans-serif;
+    --font-display: 'Sora', sans-serif;
+
+    /* Dark Minimal / Professional Palette */
+    --background: 0 0% 4%; /* #0a0a0a */
+    --foreground: 0 0% 98%; /* #fafafa */
+    
+    --card: 0 0% 8%; /* #141414 */
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* The requested accent #7c5cff */
+    --primary: 252 100% 68%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    
+    --accent: 252 100% 68%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 252 100% 68%;
+
+    --radius: 0.75rem;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-card/80 backdrop-blur-xl border border-white/5 shadow-2xl;
+  }
+  
+  .glass-button {
+    @apply bg-white/5 hover:bg-white/10 border border-white/10 text-foreground transition-all duration-300;
+  }
+
+  .primary-glow {
+    @apply shadow-[0_0_30px_-5px_hsl(var(--primary)_/_0.3)];
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
